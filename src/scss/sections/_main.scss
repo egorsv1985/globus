@@ -1,0 +1,63 @@
+.main {
+  
+
+  .container{
+    padding: 0;
+    max-width: 1230px;
+  }
+  // .main__wrapper
+  &__wrapper {
+    @include flex($flex-direction: column);
+   
+    background-color: $primaryColor;
+    @include media(min, md) {
+      flex-direction: row;
+    }
+  }
+  // .main__box-content
+  &__box-content {
+    @include flex($flex-direction: column);
+    padding: 20px 20px 24px;
+    gap: 16px;
+    @include media(min, md) {
+      padding: 40px;
+      max-width: 50%;
+    }
+    @include media(min, lg) {
+      padding: 60px;
+    }
+    @include media(min, xl) {
+      padding: 80px;
+    }
+  }
+  // .main__title
+  &__title {
+   
+  }
+  // .main__text
+  &__text {
+    
+  }
+  // .main__box-img
+  &__box-img {
+    position: relative;
+    &::before {
+      @include pseudo;
+      @include wh(94px, 50px);
+      @include background(url("@img/icons/top-left.svg"));
+      @include pos(absolute, $top: 0, $left: 11%);
+    }
+    &::after {
+      @include pseudo;
+      @include wh(63px, 70px);
+      @include background(url("@img/icons/top-right.svg"));
+      @include pos(absolute, $top: 0, $right: 0);
+    }
+  }
+  // .main__img
+  &__img {
+    
+    height: 100%;
+    width: 100%;
+  }
+}

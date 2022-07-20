@@ -1,0 +1,117 @@
+.catalog {
+  padding: 25px 0;
+  @include media (min, xl) {
+    padding: 40px 0;
+  }
+  // .catalog__wrapper
+  &__wrapper {
+    @include flex($flex-direction: column);
+    gap: 10px;
+    @include media (min, xl) {
+      gap: 18px;
+    }
+  }
+  // .catalog__title
+  &__title {
+  }
+  // .catalog__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    @include media (min, md) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @include media (min, xl) {
+      grid-template-columns: repeat(5, 1fr);
+      overflow-x: auto;
+    }
+  }
+  // .catalog__item
+  &__item {
+    padding: 24px 20px;
+
+    @include flex($align-items: center, $flex-direction: column);
+    gap: 18px;
+    position: relative;
+    @include media (min, lg) {
+      gap: 25px;
+      padding: 30px 20px;
+    }
+    &::before {
+      @include pseudo;
+      @include wh(41px, 22px);
+      @include background(url("@img/icons/top-left.svg"));
+      @include pos(absolute, $top: 0, $left: 8%);
+      @include media (min, lg) {
+        @include wh(60px, 30px);
+      }
+    }
+    &::after {
+      @include pseudo;
+      @include wh(27px, 30px);
+      @include background(url("@img/icons/top-right.svg"));
+      @include pos(absolute, $top: 0, $right: 0);
+      @include media (min, lg) {
+        @include wh(40px, 44px);
+      }
+    }
+    &:first-child {
+      background-color: #54b3ff;
+    }
+    &:nth-child(2) {
+      background-color: #fc9a48;
+    }
+    &:nth-child(3) {
+      background-color: #9477e6;
+    }
+    &:nth-child(4) {
+      background-color: #49d170;
+    }
+    &:nth-child(5) {
+      background-color: #ff6254;
+    }
+    &:last-child {
+      background-color: #f0f4fe;
+      @include media (min, xl) {
+        display: none;
+      }
+      .catalog__box-img {
+        opacity: 1;
+        mix-blend-mode: unset;
+      }
+      .catalog__img {
+        @include wh(40px);
+      }
+    }
+  }
+  // .catalog__box-img
+  &__box-img {
+    @include wh(124px);
+    @include flex(center, center);
+    border-radius: 50%;
+    background-color: $accentColor;
+    mix-blend-mode: overlay;
+
+    opacity: 0.5;
+
+    @include media (min, lg) {
+      @include wh(190px);
+    }
+  }
+  // .catalog__img
+  &__img {
+    @include wh(90px);
+    @include media (min, xl) {
+      @include wh(150px);
+    }
+  }
+  // .catalog__subtitle
+  &__subtitle {
+    max-width: 100px;
+    @include media (min, lg) {
+      max-width: 135px;
+    }
+  }
+}

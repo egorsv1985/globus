@@ -1,0 +1,54 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.title {
+  font-weight: 700;
+
+  font-size: 24px;
+  line-height: 32px;
+
+  color: $mainColor;
+  @include media(min, lg) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &--big {
+    font-size: 32px;
+    line-height: 40px;
+    @include media(min, lg) {
+      font-size: 40px;
+      line-height: 48px;
+    }
+  }
+  &--white {
+    color: $accentColor;
+  }
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+
+  @include media(min, lg) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &--white {
+    color: $accentColor;
+  }
+  &--blue {
+    color: #314c97;
+  }
+}
+
+.text {
+  font-size: 16px;
+  line-height: 26px;
+
+  &--white {
+    color: $accentColor;
+  }
+}
