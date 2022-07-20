@@ -1,7 +1,7 @@
 .catalog {
-  padding: 25px 0;
+  padding: 25px 0 10px;
   @include media (min, xl) {
-    padding: 40px 0;
+    padding: 40px 0 20px;
   }
   // .catalog__wrapper
   &__wrapper {
