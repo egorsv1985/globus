@@ -33,13 +33,11 @@
   }
   // .catalog__item
   &__item {
-    padding: 24px 20px;
+    padding: 40px 20px 24px;
 
-  
     position: relative;
     @include media(min, lg) {
-    
-      padding: 30px 20px;
+      padding: 50px 20px 30px;
     }
     &::before {
       @include pseudo;
@@ -75,7 +73,11 @@
       background-color: #ff6254;
     }
     &:last-child {
+      padding-top: 66px;
       background-color: #f0f4fe;
+      .catalog__link {
+        gap: 60px;
+      }
       @include media(min, xl) {
         display: none;
       }
@@ -91,25 +93,30 @@
   // .catalog__link
   &__link {
     @include flex($align-items: center, $flex-direction: column);
-    gap: 18px;
-   
+    gap: 35px;
+
     @include media(min, lg) {
-      gap: 25px;
+      gap: 45px;
     }
   }
 
   // .catalog__box-img
   &__box-img {
-    @include wh(124px);
     @include flex(center, center);
-    border-radius: 50%;
-    background-color: $accentColor;
-    mix-blend-mode: overlay;
+    position: relative;
+    &::before {
+      @include pseudo;
+      @include wh(124px);
+      @include pos(absolute, $top: 50%, $left: 50%);
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: $accentColor;
+      mix-blend-mode: overlay;
 
-    opacity: 0.5;
-
-    @include media(min, lg) {
-      @include wh(190px);
+      opacity: 0.5;
+      @include media(min, lg) {
+        @include wh(190px);
+      }
     }
   }
   // .catalog__img
