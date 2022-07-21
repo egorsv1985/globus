@@ -1,5 +1,8 @@
 .info {
   padding: 20px 0;
+  @include media(min, lg) {
+    padding: 32px 0;
+  }
   // .info__wrapper
   &__wrapper {
     @include flex($flex-direction: column);
@@ -7,38 +10,97 @@
   // .info__title
   &__title {
     margin-bottom: 10px;
+    @include media(min, lg) {
+      margin-bottom: 30px;
+    }
   }
   // .info__wrap
   &__wrap {
+    @include flex($flex-wrap: wrap, $flex-direction: column);
+    gap: 14px;
     background-color: #f7f9fc;
-    padding: 20px;
+    padding: 22px 16px 10px;
+    margin-bottom: 20px;
+    @include media(min, lg) {
+      flex-direction: row;
+      padding: 26px 10px;
+      margin-bottom: 32px;
+    }
   }
   // .info__box
   &__box {
+    border-bottom: 1px solid #dedfe0;
+    @include flex($flex-direction: column);
+    gap: 20px;
+    padding-bottom: 18px;
+    &:last-child {
+      border-bottom: none;
+    }
+    @include media(min, lg) {
+      border-bottom: none;
+      border-right: 1px solid #dedfe0;
+      width: 32%;
+      padding-left: 26px;
+      &:last-child{
+        border-right: none;
+      }
+    }
   }
   // .info__subtitle
   &__subtitle {
     text-align: left;
+    @include media(min, lg) {
+      font-size: 18px;
+      line-height: 26px;
+    }
   }
   // .info__list
   &__list {
   }
   // .info__item
   &__item {
+    @include flex();
+    gap: 20px;
   }
+
   // .info__text
   &__text {
+    &--column {
+      @include flex($flex-direction: column);
+      @include media(min, lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 360px;
+      }
+    }
+
   }
   // .info__link
   &__link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: $primaryColor;
   }
   // .info__social
   &__social {
+    @include flex($align-items: center);
+    gap: 8px;
+    margin-top: 10px;
   }
   // .info__item-social
   &__item-social {
   }
   // .info__link-social
   &__link-social {
+    @include flex(center, center);
+    @include wh(40px);
+
+    border: 1px solid rgba(59, 137, 228, 0.3);
+    border-radius: 50%;
+    &:hover {
+      border: 1px solid #3b89e4;
+    }
   }
 }

@@ -1,13 +1,13 @@
 .catalog {
   padding: 25px 0 10px;
-  @include media (min, xl) {
+  @include media(min, xl) {
     padding: 40px 0 20px;
   }
   // .catalog__wrapper
   &__wrapper {
     @include flex($flex-direction: column);
     gap: 10px;
-    @include media (min, xl) {
+    @include media(min, xl) {
       gap: 18px;
     }
   }
@@ -17,13 +17,16 @@
   // .catalog__list
   &__list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 7px;
-    @include media (min, md) {
+    @include media(min, 374px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media(min, md) {
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
     }
-    @include media (min, xl) {
+    @include media(min, xl) {
       grid-template-columns: repeat(5, 1fr);
       overflow-x: auto;
     }
@@ -32,11 +35,10 @@
   &__item {
     padding: 24px 20px;
 
-    @include flex($align-items: center, $flex-direction: column);
-    gap: 18px;
+  
     position: relative;
-    @include media (min, lg) {
-      gap: 25px;
+    @include media(min, lg) {
+    
       padding: 30px 20px;
     }
     &::before {
@@ -44,7 +46,7 @@
       @include wh(41px, 22px);
       @include background(url("@img/icons/top-left.svg"));
       @include pos(absolute, $top: 0, $left: 8%);
-      @include media (min, lg) {
+      @include media(min, lg) {
         @include wh(60px, 30px);
       }
     }
@@ -53,7 +55,7 @@
       @include wh(27px, 30px);
       @include background(url("@img/icons/top-right.svg"));
       @include pos(absolute, $top: 0, $right: 0);
-      @include media (min, lg) {
+      @include media(min, lg) {
         @include wh(40px, 44px);
       }
     }
@@ -74,7 +76,7 @@
     }
     &:last-child {
       background-color: #f0f4fe;
-      @include media (min, xl) {
+      @include media(min, xl) {
         display: none;
       }
       .catalog__box-img {
@@ -86,6 +88,16 @@
       }
     }
   }
+  // .catalog__link
+  &__link {
+    @include flex($align-items: center, $flex-direction: column);
+    gap: 18px;
+   
+    @include media(min, lg) {
+      gap: 25px;
+    }
+  }
+
   // .catalog__box-img
   &__box-img {
     @include wh(124px);
@@ -96,21 +108,21 @@
 
     opacity: 0.5;
 
-    @include media (min, lg) {
+    @include media(min, lg) {
       @include wh(190px);
     }
   }
   // .catalog__img
   &__img {
     @include wh(90px);
-    @include media (min, xl) {
+    @include media(min, xl) {
       @include wh(150px);
     }
   }
   // .catalog__subtitle
   &__subtitle {
     max-width: 100px;
-    @include media (min, lg) {
+    @include media(min, lg) {
       max-width: 135px;
     }
   }
